@@ -20,12 +20,12 @@
                 extend: {
                     colors: {
                         baine: {
-                            cream: '#FDFBF7',   // Main cream background
-                            card: '#FFFFFF',    // White for surface cards
-                            navy: '#1E3A8A',    // Navy blue for text
-                            blue: '#2563EB',    // Bright blue for buttons/accents
-                            cyan: '#0891B2',    // Cyan for highlights
-                            teal: '#0D9488',    // Teal for success/eco elements
+                            cream: '#F8F4ED',   // Main background
+                            card: '#FFFFFF',    // Cards & surfaces
+                            navy: '#003087',    // Primary text & headings
+                            blue: '#D4AF87',    // Gold - premium buttons & accents
+                            cyan: '#B8D8E8',    // Soft light blue highlights
+                            teal: '#D4AF87'     // Gold for eco/success elements
                         }
                     },
                     fontFamily: {
@@ -35,21 +35,18 @@
             }
         }
     </script>
+
     <style>
-        body { background-image: url('b1.jpg');
-    background-attachment: fixed; /* Parallax scrolling effect */
-    background-size: cover;       /* Ensure it fills the screen */
-    background-position: center;}
         .glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(30, 58, 138, 0.1);
+            border: 1px solid rgba(0, 48, 135, 0.12);
         }
         .glass-card {
-            background: linear-gradient(145deg, #FFFFFF 0%, #FDFBF7 100%);
-            border: 1px solid rgba(30, 58, 138, 0.08);
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.03);
+            background: linear-gradient(145deg, #FFFFFF 0%, #F8F4ED 100%);
+            border: 1px solid rgba(0, 48, 135, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 48, 135, 0.04);
             backdrop-filter: blur(5px);
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -63,29 +60,31 @@
         img { transition: opacity 0.3s ease-in-out; }
     </style>
 </head>
+
 <body class="bg-baine-cream text-baine-navy font-sans min-h-screen flex flex-col selection:bg-baine-blue selection:text-white overflow-x-hidden">
 
+    <!-- Subtle luxury background glows (updated colors) -->
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-baine-blue/10 rounded-full blur-[100px] mix-blend-multiply"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-baine-cyan/10 rounded-full blur-[120px] mix-blend-multiply"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-baine-cyan/10 rounded-full blur-[100px] mix-blend-multiply"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-baine-teal/10 rounded-full blur-[120px] mix-blend-multiply"></div>
     </div>
 
+    <!-- HEADER (unchanged structure, new colors applied automatically) -->
     <header class="fixed top-0 w-full z-40 px-6 py-4 transition-all duration-300" id="main-header">
         <div class="max-w-7xl mx-auto glass rounded-full px-6 py-3 flex justify-between items-center shadow-lg shadow-baine-navy/5">
             <div class="flex items-center gap-3">
-    <div class="h-10 w-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-baine-blue/20">
-        <img src="logo1.jpeg" alt="Abainez Logo" class="w-full h-full object-cover">
-    </div>
-    
-    <div class="leading-none sm:block">
-        <span class="block text-sm font-bold tracking-widest text-baine-navy uppercase">ABEINEZ</span>
-        <span class="block text-[10px] text-baine-cyan tracking-[0.1em] font-medium uppercase">Cleaning Services</span>
-    </div>
-</div>
+                <div class="h-10 w-10 rounded-full bg-white flex items-center justify-center overflow-hidden border border-baine-blue/20">
+                    <img src="logo1.jpeg" alt="Abeinez Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="leading-none sm:block">
+                    <span class="block text-sm font-bold tracking-widest text-baine-navy uppercase">ABEINEZ</span>
+                    <span class="block text-[10px] text-baine-cyan tracking-[0.1em] font-medium uppercase">Cleaning Services</span>
+                </div>
+            </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-baine-navy/70">
                 <button onclick="switchView('home')" class="hover:text-baine-blue transition-colors font-bold text-baine-navy">Home</button>
                 <button onclick="switchView('facts')" class="hover:text-baine-blue transition-colors font-bold">Our Process</button>
-                <a href="https://wa.me/256777037619" class="bg-baine-blue hover:bg-blue-700 text-white px-5 py-2 rounded-full transition-all shadow-lg shadow-blue-500/30 font-bold">
+                <a href="https://wa.me/256777037619" class="bg-baine-blue hover:bg-amber-700 text-white px-5 py-2 rounded-full transition-all shadow-lg shadow-baine-blue/30 font-bold">
                     Book a Cleaner
                 </a>
             </div>
@@ -93,35 +92,35 @@
     </header>
 
     <main class="flex-1 pt-28 pb-32 px-4 md:px-8 max-w-7xl mx-auto w-full">
-    <section id="view-home" class="space-y-12">
-        <div class="fade-up">
-            <div class="relative rounded-3xl overflow-hidden bg-baine-card border border-baine-navy/10 shadow-2xl shadow-baine-navy/5 min-h-[400px] md:h-[450px] flex flex-col md:flex-row items-center">
-                <div class="p-8 md:p-12 md:w-1/2 z-10 flex flex-col items-start justify-center h-full">
-                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-baine-blue/10 text-baine-blue text-[10px] font-bold tracking-wider mb-4 border border-baine-blue/20">
-                        <span class="w-1.5 h-1.5 rounded-full bg-baine-blue animate-pulse"></span>
-                        SPOTLESS SPACES, GUARANTEED
-                    </span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-baine-navy leading-[1.1] mb-4">
-                        Professional <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-baine-cyan to-baine-blue">Cleaning</span>
-                    </h1>
-                    <p class="text-baine-navy/70 text-sm md:text-base mb-8 max-w-md leading-relaxed font-medium">
-                        We handle all aspects of cleaning tasks in all fields in a professional manner. From residential deep cleans to commercial maintenance, we leave your space immaculate.
-                    </p>
-                    <div class="flex gap-4">
-                        <button onclick="document.getElementById('products-grid').scrollIntoView({behavior: 'smooth'})" class="bg-baine-blue text-white px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(37,99,235,0.3)]">
-                            View Services
-                        </button>
-                        <button onclick="switchView('facts')" class="px-6 py-3 rounded-full font-bold text-sm text-baine-navy border border-baine-navy/10 hover:bg-baine-navy/5 transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-chart-pie text-baine-cyan"></i> Our Process
-                        </button>
+        <section id="view-home" class="space-y-12">
+
+            <!-- HERO SECTION (now uses gold & light blue gradient) -->
+            <div class="fade-up">
+                <div class="relative rounded-3xl overflow-hidden bg-baine-card border border-baine-navy/10 shadow-2xl shadow-baine-navy/5 min-h-[400px] md:h-[450px] flex flex-col md:flex-row items-center">
+                    <div class="p-8 md:p-12 md:w-1/2 z-10 flex flex-col items-start justify-center h-full">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-baine-blue/10 text-baine-blue text-[10px] font-bold tracking-wider mb-4 border border-baine-blue/20">
+                            <span class="w-1.5 h-1.5 rounded-full bg-baine-blue animate-pulse"></span>
+                            SPOTLESS SPACES, GUARANTEED
+                        </span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-baine-navy leading-[1.1] mb-4">
+                            Professional <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-baine-cyan to-baine-blue">Cleaning</span>
+                        </h1>
+                        <p class="text-baine-navy/70 text-sm md:text-base mb-8 max-w-md leading-relaxed font-medium">
+                            We handle all aspects of cleaning tasks in all fields in a professional manner. From residential deep cleans to commercial maintenance, we leave your space immaculate.
+                        </p>
+                        <div class="flex gap-4">
+                            <button onclick="document.getElementById('products-grid').scrollIntoView({behavior: 'smooth'})" class="bg-baine-blue text-white px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(212,175,135,0.4)]">
+                                View Services
+                            </button>
+                            <button onclick="switchView('facts')" class="px-6 py-3 rounded-full font-bold text-sm text-baine-navy border border-baine-navy/10 hover:bg-baine-navy/5 transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-chart-pie text-baine-cyan"></i> Our Process
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="md:w-1/2 w-full h-64 md:h-full relative overflow-hidden bg-baine-blue/5 flex items-center justify-center group">
+                    <div class="md:w-1/2 w-full h-64 md:h-full relative overflow-hidden bg-baine-blue/5 flex items-center justify-center group">
                         <div class="absolute w-56 h-56 bg-baine-blue/10 rounded-full blur-2xl animate-pulse"></div>
-                        
                         <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-baine-card via-transparent to-transparent z-10 pointer-events-none"></div>
-                        
                         <div class="w-48 h-48 md:w-56 md:h-56 rounded-full bg-white flex items-center justify-center border-[6px] border-baine-cyan/10 transform group-hover:scale-105 group-hover:border-baine-cyan/30 transition-all duration-700 relative z-20 shadow-2xl shadow-baine-blue/20 overflow-hidden p-4">
                             <img src="logo1.jpeg" alt="Abeinez Cleaning Services Logo" fetchpriority="high" class="w-full h-full object-contain">
                         </div>
@@ -129,11 +128,23 @@
                 </div>
             </div>
 
+            <!-- OUR SERVICES - Luxury Glass Card (exactly as you requested) -->
             <div id="products-grid" class="fade-up delay-100 mt-12 md:mt-16 relative z-20">
-                <div class="glass-card rounded-3xl p-6 md:p-8 mb-8">
-                    <div>
-                        <h2 class="text-2xl md:text-3xl font-extrabold text-baine-navy tracking-tight">Our Services</h2>
-                        <p class="text-baine-blue font-bold text-xs md:text-sm mt-1.5 uppercase tracking-wider">Tailored cleaning solutions for every need</p>
+                <div class="glass-card rounded-3xl p-6 md:p-8 mb-8 border border-[#D4AF87]/10 shadow-xl">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-baine-navy via-[#003087] to-[#D4AF87] bg-clip-text text-transparent">
+                                Our Services
+                            </h2>
+                            <p class="text-[#D4AF87] font-bold text-xs md:text-sm mt-1.5 uppercase tracking-wider flex items-center gap-2">
+                                <span class="inline-block w-2 h-2 bg-[#D4AF87] rounded-full animate-pulse"></span>
+                                Tailored cleaning solutions for every need
+                            </p>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-1.5 text-[#D4AF87] text-sm font-medium">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>Premium Collection</span>
+                        </div>
                     </div>
                 </div>
 
